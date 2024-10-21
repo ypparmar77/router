@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter ,Routes ,Route } from 'react-router-dom';
 import './App.css';
+import Nevbar from './Component/Nevbar';
+import NevbarTwo from './router_work/Nevbar';
+import About from './router_work/About';
+import Home from './router_work/Home';
+import Help from './router_work/Help';
+import Email from './router_work/Email';
+import Api_work from './router_work/Api_work';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<NevbarTwo/>}>
+    <Route index    element={<About/>} />
+    <Route path='/Help'  element={<Help/>} />
+    <Route path='/Home'  element={<Home/>} />
+    <Route path='/Email' element={<Email/>}/>
+    <Route path='/Api_work' element={<Api_work/>} />
+    </Route>
+   </Routes>
+   </BrowserRouter>
   );
 }
-
 export default App;
+
